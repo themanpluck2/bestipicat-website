@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestEpicCat - Gamer & Cyber Security Enthusiast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+        }
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #00ff88;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        nav a:hover {
+            color: #00ff88;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: #00ff88;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero {
+            background: radial-gradient(circle, #00ff88 0%, #00bfff 100%);
+            text-align: center;
+            border-radius: 20px;
+            padding: 4rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #00ff88 0%, #00bfff 100%);
+            color: #000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+        }
+        .about, .games, .education, .contact {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #00ff88;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #00ff88 0%, #00bfff 100%);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .game-card {
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        .game-card i {
+            font-size: 4rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .contact-item {
+            background: rgba(0, 191, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+        }
+        .contact-item i {
+            font-size: 2rem;
+            color: #00bfff;
+            margin-bottom: 1rem;
+        }
+        .discord-link {
+            color: #7289da;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .discord-link:hover {
+            color: #fff;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { flex-direction: column; gap: 1rem; }
+            section { padding: 50px 5%; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">BestEpicCat</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>BestEpicCat</h1>
+        <p>Gamer, Cyber Security Student, and Epic Adventurer</p>
+        <a href="#about" class="cta-button">Explore My World</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <p>Hey there! I'm BestEpicCat, a passionate gamer and aspiring cyber security expert. By day, I'm grinding through college courses, and by night, I'm diving into virtual worlds. Whether it's building epic structures in Minecraft or conquering challenges in Roblox, gaming is my escape and my passion. Join me on this journey of pixels and protocols!</p>
+    </section>
+
+    <section id="games" class="games">
+        <h2 class="section-title">My Games</h2>
+        <p>I love immersive worlds where creativity meets challenge. Here's where I spend my gaming hours:</p>
+        <div class="games-grid">
+            <div class="game-card">
+                <i class="fas fa-cube"></i>
+                <h3>Minecraft</h3>
+                <p>Building dream worlds, surviving nights, and modding adventures. From redstone contraptions to massive servers—it's endless creativity!</p>
+            </div>
+            <div class="game-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Roblox</h3>
+                <p>Custom games, obbies, and role-plays. I create and play everything from tycoons to horror experiences. What's your fave Roblox game?</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <h2 class="section-title">Education</h2>
+        <p>Currently pursuing a degree in Cyber Security at college. Learning to protect the digital world while hacking (ethically, of course!). From encryption to ethical hacking, it's the perfect blend of tech and thrill.</p>
+        <div style="text-align: center; margin-top: 2rem;">
+            <i class="fas fa-graduation-cap" style="font-size: 4rem; color: #00ff88; margin-bottom: 1rem;"></i>
+            <p>Future: Certified Ethical Hacker & Game Dev Pro</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>Want to game together, chat cyber sec, or collab on a project? Hit me up!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fab fa-discord"></i>
+                <h3>Discord</h3>
+                <p>Add me for gaming sessions or tech talks!</p>
+                <a href="https://discord.com/users/bestepiccat" class="discord-link" target="_blank">bestepiccat</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>bestepiccat@example.com (or DM on Discord for real deets)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 BestEpicCat. All rights reserved. Made with <i class="fas fa-heart" style="color: #ff6b6b;"></i> and code.</p>
+    </footer>
+</body>
+</html>
